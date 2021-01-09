@@ -1,8 +1,11 @@
 {
   "name": "unotify-for-termux",
   "version": "0.1.1",
-  "main": "index.js",
   "description": "Command-line UniversalNotification notifier for Termux.",
+  "files": [
+    "lib"
+  ],
+  "repository": "git@github.com:UniversalNotification/unotify-for-termux.git",
   "author": "BlackGlory <woshenmedoubuzhidao@blackglory.me>",
   "license": "MIT",
   "bin": {
