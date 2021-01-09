@@ -8,22 +8,16 @@ import { parallel } from 'extra-promise'
 export async function notify(notification: UniversalNotification): Promise<void> {
   const clean: Array<() => Promise<void>> = []
   const options: string[] = []
-  if (notification.title) options.push('--title', escape(notification.title))
-  if (notification.message) options.push('--content', escape(notification.message))
-  if (notification.url) options.push('--action', escape(`termux-open-url ${escape(notification.url)}`))
+  if (notification.title) options.push('--title', notification.title)
+  if (notification.message) options.push('--content', notification.message)
+  if (notification.url) options.push('--action', `termux-open-url ${notification.url}`)
   if (notification.imageUrl) {
     const imageFilename = await getResultPromise(downloadImage(notification.imageUrl))
     if (imageFilename) {
-      options.push('--image-path', escape(imageFilename))
+      options.push('--image-path', imageFilename)
       clean.push(() => fs.remove(imageFilename))
     }
   }
   spawn('termux-notification', options, { stdio: 'inherit' })
   await parallel(clean)
-}
-
-function escape(str: string): string {
-  const result = str.replace(/\\/g, '\\\\')
-                    .replace(/'/g, "\\'")
-  return `'${result}'`
 }
