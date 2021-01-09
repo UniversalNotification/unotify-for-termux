@@ -4,6 +4,7 @@ import { downloadImage } from '@utils/download-image'
 import { getResultPromise } from 'return-style'
 import { spawn } from 'child_process'
 import { parallel } from 'extra-promise'
+import { waitForEventEmitter } from '@blackglory/wait-for'
 
 export async function notify(notification: UniversalNotification): Promise<void> {
   const clean: Array<() => Promise<void>> = []
@@ -18,6 +19,9 @@ export async function notify(notification: UniversalNotification): Promise<void>
       clean.push(() => fs.remove(imageFilename))
     }
   }
-  spawn('termux-notification', options, { stdio: 'inherit' })
+
+  const proc = spawn('termux-notification', options, { stdio: 'inherit' })
+  await waitForEventEmitter(proc, 'close')
+
   await parallel(clean)
 }

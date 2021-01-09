@@ -24,6 +24,7 @@
     }
   },
   "dependencies": {
+    "@blackglory/wait-for": "^0.2.2",
     "ajv": "^7.0.3",
     "ajv-formats": "^1.5.1",
     "commander": "^6.2.1",
