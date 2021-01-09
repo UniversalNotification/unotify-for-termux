@@ -1,6 +1,6 @@
 {
   "name": "unotify-for-termux",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "description": "Command-line UniversalNotification notifier for Termux.",
   "author": "BlackGlory <woshenmedoubuzhidao@blackglory.me>",
