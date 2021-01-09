@@ -1,0 +1,52 @@
+{
+  "name": "unotify-for-termux",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "Command-line UniversalNotification notifier for Termux.",
+  "author": "BlackGlory <woshenmedoubuzhidao@blackglory.me>",
+  "license": "MIT",
+  "bin": {
+    "unotify": "lib/cli.js"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --quiet src",
+    "dev": "ts-node src/index.ts",
+    "dev:debug": "node --inspect-brk node_modules/.bin/ts-node src/index.ts",
+    "prepublishOnly": "yarn clean && yarn build",
+    "clean": "rm -rf lib",
+    "build": "tsc --project tsconfig.build.json && tscpaths -p tsconfig.build.json -s ./src -o ./lib",
+    "release": "standard-version"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "ajv": "^7.0.3",
+    "ajv-formats": "^1.5.1",
+    "commander": "^6.2.1",
+    "extra-promise": "^0.13.12",
+    "fs-extra": "^9.0.1",
+    "get-uri": "^3.0.2",
+    "return-style": "^0.11.3",
+    "termux": "^1.1.1",
+    "tmp-promise": "^3.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/fs-extra": "^9.0.6",
+    "@types/node": "^14.14.20",
+    "@types/tmp": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "^7.17.0",
+    "husky": "^4.3.7",
+    "standard-version": "^9.1.0",
+    "ts-node": "^9.1.1",
+    "tscpaths": "^0.0.9",
+    "typescript": "^4.1.3"
+  }
+}
