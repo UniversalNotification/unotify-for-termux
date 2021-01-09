@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from 'commander'
-import { notify } from './temux'
+import { notify } from './termux'
 import * as readline from 'readline'
 import { parseUniversalNotification } from '@utils/parse-universal-notification'
 

@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import { UniversalNotification } from '@utils/parse-universal-notification'
 import { downloadImage } from '@utils/download-image'
 import { getResultPromise } from 'return-style'
-import { exec } from 'child_process'
+import { spawn } from 'child_process'
 import { parallel } from 'extra-promise'
 
 export async function notify(notification: UniversalNotification): Promise<void> {
@@ -18,7 +18,7 @@ export async function notify(notification: UniversalNotification): Promise<void>
       clean.push(() => fs.remove(imageFilename))
     }
   }
-  exec(`termux-notification ${options.join(' ')}`)
+  spawn('termux-notification', options, { stdio: 'inherit' })
   await parallel(clean)
 }
 
