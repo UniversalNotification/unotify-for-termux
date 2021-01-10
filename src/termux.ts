@@ -1,5 +1,5 @@
 import * as fs from 'fs-extra'
-import { UniversalNotification } from '@utils/parse-universal-notification'
+import { UniversalNotification } from 'universal-notification'
 import { downloadImage } from '@utils/download-image'
 import { getResultPromise } from 'return-style'
 import { spawn } from 'child_process'

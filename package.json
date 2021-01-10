@@ -28,14 +28,13 @@
   },
   "dependencies": {
     "@blackglory/wait-for": "^0.2.2",
-    "ajv": "^7.0.3",
-    "ajv-formats": "^1.5.1",
     "commander": "^6.2.1",
     "extra-promise": "^0.13.12",
     "fs-extra": "^9.0.1",
     "get-uri": "^3.0.2",
     "return-style": "^0.11.3",
-    "tmp-promise": "^3.0.2"
+    "tmp-promise": "^3.0.2",
+    "universal-notification": "^0.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",

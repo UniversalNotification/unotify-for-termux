@@ -2,7 +2,7 @@
 import { program } from 'commander'
 import { notify } from './termux'
 import * as readline from 'readline'
-import { parseUniversalNotification } from '@utils/parse-universal-notification'
+import { parseUniversalNotification } from 'universal-notification'
 
 program
   .name('unotify')
