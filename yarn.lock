@@ -325,11 +325,6 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/tmp@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.2.0.tgz#e3f52b4d7397eaa9193592ef3fdd44dc0af4298c"
-  integrity sha512-flgpHJjntpBAdJD43ShRosQvNC0ME97DCfGvZEDlAThQmnerRXrLbX6YgzRBQCZTthET9eAWFAMaYP0m0Y4HzQ==
-
 "@typescript-eslint/eslint-plugin@^4.22.1":
   version "4.22.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.22.1.tgz#6bcdbaa4548553ab861b4e5f34936ead1349a543"
@@ -1461,6 +1456,13 @@ extra-fetch@^1.7.1:
     node-fetch "https://github.com/BlackGlory/node-fetch#master"
     return-style "^0.12.3"
     value-getter "^0.1.13"
+
+extra-filesystem@^0.2.16:
+  version "0.2.16"
+  resolved "https://registry.yarnpkg.com/extra-filesystem/-/extra-filesystem-0.2.16.tgz#0550f8c5e99f8347b9505988d2de92436d387539"
+  integrity sha512-wOev0XQEnhaCPnewCWW0YOBkXRieMUlNfP3tYe5LrU6OrkFoSlnl4do3IgTr1V+yH2xVFBvTvmZDaDfWDdMVgw==
+  dependencies:
+    tmp-promise "^3.0.2"
 
 extra-generator@^0.2.4:
   version "0.2.4"

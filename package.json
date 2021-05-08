@@ -34,17 +34,16 @@
   "dependencies": {
     "@blackglory/wait-for": "^0.3.0",
     "commander": "^7.2.0",
+    "extra-filesystem": "^0.2.16",
     "extra-promise": "^0.16.4",
     "get-uri": "^3.0.2",
     "return-style": "^0.12.3",
-    "tmp-promise": "^3.0.2",
     "universal-notification": "^0.1.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@types/node": "^15.0.2",
-    "@types/tmp": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
     "eslint": "^7.26.0",
