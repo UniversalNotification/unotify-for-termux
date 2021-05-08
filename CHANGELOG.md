@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/UniversalNotification/unotify-for-termux/compare/v0.1.8...v0.2.0) (2021-05-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js >= 14 required
+
+* replace fs-extra with extra-filesystem ([af3e6b6](https://github.com/UniversalNotification/unotify-for-termux/commit/af3e6b6ebad2f25ab1aad4e53ae2ea251dbdffbd))
+
 ### [0.1.8](https://github.com/UniversalNotification/unotify-for-termux/compare/v0.1.7...v0.1.8) (2021-03-27)
 
 ### [0.1.7](https://github.com/UniversalNotification/unotify-for-termux/compare/v0.1.6...v0.1.7) (2021-03-17)
