@@ -1,5 +1,5 @@
-import * as fs from 'fs-extra'
 import { file } from 'tmp-promise'
+import { createWriteStream } from 'fs'
 import { pipeline } from 'stream'
 import { promisify } from 'extra-promise'
 import getUri = require('get-uri')
@@ -12,7 +12,7 @@ export function downloadImage(uri: string): Promise<string> {
       const { path, cleanup } = await file()
       pipeline(
         stream
-      , fs.createWriteStream(path)
+      , createWriteStream(path)
       , async err => {
           if (err) {
             await cleanup()

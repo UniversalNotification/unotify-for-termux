@@ -28,11 +28,13 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "engines": {
+    "node": ">= 14"
+  },
   "dependencies": {
     "@blackglory/wait-for": "^0.3.0",
     "commander": "^7.2.0",
     "extra-promise": "^0.16.4",
-    "fs-extra": "^10.0.0",
     "get-uri": "^3.0.2",
     "return-style": "^0.12.3",
     "tmp-promise": "^3.0.2",
@@ -41,7 +43,6 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
-    "@types/fs-extra": "^9.0.11",
     "@types/node": "^15.0.2",
     "@types/tmp": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^4.22.1",

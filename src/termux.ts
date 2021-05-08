@@ -1,10 +1,10 @@
-import * as fs from 'fs-extra'
 import { UniversalNotification } from 'universal-notification'
 import { downloadImage } from '@utils/download-image'
 import { getResultPromise } from 'return-style'
 import { spawn } from 'child_process'
 import { parallel } from 'extra-promise'
 import { waitForEventEmitter } from '@blackglory/wait-for'
+import { promises as fs } from 'fs'
 
 export async function notify(notification: UniversalNotification): Promise<void> {
   const clean: Array<() => Promise<void>> = []
@@ -16,7 +16,7 @@ export async function notify(notification: UniversalNotification): Promise<void>
     const imageFilename = await getResultPromise(downloadImage(notification.imageUrl))
     if (imageFilename) {
       options.push('--image-path', imageFilename)
-      clean.push(() => fs.remove(imageFilename))
+      clean.push(() => fs.rm(imageFilename))
     }
   }
 
