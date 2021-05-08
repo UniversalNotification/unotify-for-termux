@@ -1,6 +1,6 @@
 {
   "name": "unotify-for-termux",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Command-line UniversalNotification notifier for Termux.",
   "files": [
     "lib"
