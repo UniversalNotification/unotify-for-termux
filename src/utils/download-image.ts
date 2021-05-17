@@ -1,29 +1,21 @@
-import { createWriteStream, promises as fs } from 'fs'
+import { createWriteStream } from 'fs'
 import { pipeline } from 'stream'
-import { promisify } from 'extra-promise'
-import { createTempFile } from 'extra-filesystem'
-import getUri = require('get-uri')
-const getURI = promisify<NodeJS.ReadableStream>(getUri)
+import { createTempFile, remove } from 'extra-filesystem'
+import getUri from 'get-uri'
+import { promisify } from 'util'
 
-export function downloadImage(uri: string): Promise<string> {
-  return new Promise<string>(async (resolve, reject) => {
-    try {
-      const stream = await getURI(uri)
-      const filename = await createTempFile()
-      pipeline(
-        stream
-      , createWriteStream(filename)
-      , async err => {
-          if (err) {
-            await fs.rm(filename)
-            reject()
-          } else {
-            resolve(filename)
-          }
-        }
-      )
-    } catch (e) {
-      reject(e)
-    }
-  })
+export async function downloadImage(uri: string): Promise<string> {
+  const stream = await getUri(uri)
+  const filename = await createTempFile()
+
+  try {
+    await promisify(pipeline)(
+      stream
+    , createWriteStream(filename)
+    )
+    return filename
+  } catch (e) {
+    await remove(filename)
+    throw e
+  }
 }
